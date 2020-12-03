@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <nav>
+      <ul id = "navigation">
+        <div style="display:inline"><a href="index.html">Home</a></div>
+        <div style="display:inline"><a href="interests.html">Passions</a></div>
+        <div style="display:inline"><a href="experiences.html">Experiences</a></div>
+        <div style="display:inline"><a href="test.html">Test</a></div>
+      </ul>
+    </nav>
+  </header>
+ <head>
+  <title>JavaScript Tag Cloud Chart</title>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
+  <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
+   
+   <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+   
+  <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+  <style>
+    html, body, #container {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    }
+  </style> 
+ </head>
+  <body>
+   <div id="container"></div>
+    <script>
+        anychart.onDocumentReady(function() {
+        var data = [
+          {"x": "People", "value": (10*100000000), category: "Part of my future"},
+          {"x": "Technology", "value": (9*100000000), category: "Part of my future"},
+          {"x": "Design", "value": (5*100000000), category: "Part of my future"},
+          {"x": "Art", "value": (3*100000000), category: "Not sure"},
+          {"x": "Education", "value": (5*100000000), category: "Not sure"},
+          {"x": "Running", "value": (7*100000000), category: "Just love it"},
+          {"x": "Reading", "value": (4*100000000), category: "Just love it"},
+          {"x": "Psychology", "value": (8*100000000), category: "Part of my future"},
+          {"x": "Web Design", "value": (5*100000000), category: "Part of my future"},
+          {"x": "Helping Others", "value": (9*100000000), category: "Part of my future"},
+          {"x": "Roller Coasters", "value": (6*100000000), category: "Just love it"},
+          {"x": "Personality Theories", "value": (5*100000000), category: "Not sure"},
+          {"x": "Mental Health", "value": (6*100000000), category: "Part of my future"},
+          {"x": "App Development", "value": (3*100000000), category: "Not sure"},
+          {"x": "Innovation", "value": (5*100000000), category: "Part of my future"}
+        ];
+      // create a tag (word) cloud chart
+        var chart = anychart.tagCloud(data);
+      // set a chart title
+        chart.title('My Passions')
+      // set an array of angles at which the words will be laid out
+        chart.angles([0])
+      // enable a color range
+        chart.colorRange(true);
+        // set the color range length
+        chart.colorRange().length('80%');
+      // display the word cloud chart
+
+        chart.container("container");
+        chart.draw();
+      });
+    </script>
+  </body>
+</html>
