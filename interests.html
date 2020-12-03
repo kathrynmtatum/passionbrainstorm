@@ -10,7 +10,7 @@
     </nav>
   </header>
  <head>
-  <title>Passions</title>
+  <title>Passion</title>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js"></script>
   <script src="https://cdn.anychart.com/releases/v8/js/anychart-tag-cloud.min.js"></script>
    
@@ -28,12 +28,21 @@
     }
   </style> 
  </head>
+  <h1>
+    Passion Word Web
+  </h1>
   <body>
     
+    This is an activity to help you think about your passions and categorize them. It will generate a word chart for you (example below) that visualizes all the things you love.
+    <br>
+    The more you love something, the bigger it appears. It also appears in a different color based on the category you place it in. 
+    <br>
+    Enter some things you love below and press "submit my passion" each time. Once you are finished entering passions, your personalized chart will appear below the example once you press "see my chart".
+    <br><br>
     
     <form id="form1">
       <label for="passionName">What is something you love?<input type="text" id="passionName"/></label>
-      <label for="howMuch">How much do you love it? (Enter a number between 1-10)<input type="text" id="howMuch"/></label>
+      <label for="howMuch">How much do you love it? (Enter a number between 1-10 ... whole numbers only!)<input type="text" id="howMuch"/></label>
       <label for="passionCategory">Categorize this passion: <select name="category" id="passionCategory">
         <option value="Part of my future" selected="selected">I want it to be part of my future</option>
         <option value="Just love it" selected="selected">I just love it</option>
@@ -83,7 +92,7 @@
       // create a tag (word) cloud chart
         var chart = anychart.tagCloud(data);
       // set a chart title
-        chart.title('Example Passions')
+        chart.title('Example Passion Chart')
       // set an array of angles at which the words will be laid out
         chart.angles([0])
       // enable a color range
@@ -98,6 +107,7 @@
           
 // the following lines grab the input from the form and store it in variables
       document.getElementById("button").onclick = function() {
+        
         passionName = document.getElementById("passionName").value;
         console.log("passion name: ", passionName)
         howMuch = document.getElementById("howMuch").value;
@@ -135,7 +145,7 @@
           return false; // required to not refresh the page; just leave this here
       };
           
-//Editing the example
+//Editing the
           
       });
       

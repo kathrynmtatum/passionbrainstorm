@@ -26,6 +26,13 @@ h2 {
   padding: 10px;
 }
 
+body2 {
+  font-family: helvetica, arial, sans-serif;
+  margin: 2em;
+  background-color: #E5E5E5;
+  text-align: center;
+}
+
 #content {
   background-color: #EDEDED;
   border-style: dotted;
