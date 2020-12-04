@@ -29,22 +29,33 @@
   </style> 
  </head>
   <h1>
-    Passion Word Web
+    Passion Word Map
   </h1>
   <body>
     
-    This is an activity to help you think about your passions and categorize them. It will generate a word chart for you (example below) that visualizes all the things you love.
+     <img
+      src="https://images.unsplash.com/photo-1571172964533-d2d13d88ce7e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80"
+      class="center"
+      alt="image2"
+      width="1100"
+      height="600"
+    />
+    <br>
+    This is an activity to help you think about your passions and categorize them. It will generate a word chart for you that visualizes all the things you love.
     <br>
     The more you love something, the bigger it appears. It also appears in a different color based on the category you place it in. 
     <br>
-    Enter some things you love below and press "submit my passion" each time. Once you are finished entering passions, your personalized chart will appear below the example once you press "see my chart".
+    Enter some things you love below and press "submit my passion" each time. Once you are finished entering passions, click "see my chart" to see your Passion Word Map.
+    <br>
+    Check out an example <a href="example.html">here</a>!
     <br><br>
+  
     
     <form id="form1">
-      <label for="passionName">What is something you love?<input type="text" id="passionName"/></label>
-      <label for="howMuch">How much do you love it? (Enter a number between 1-10 ... whole numbers only!)<input type="text" id="howMuch"/></label>
-      <label for="passionCategory">Categorize this passion: <select name="category" id="passionCategory">
-        <option value="Part of my future" selected="selected">I want it to be part of my future</option>
+      <label for="passionName">What is something you love? 💗 <input type="text" id="passionName"/></label>
+      <label for="howMuch">How much do you love it? 🙌 (Enter a number between 1-10 ... whole numbers only!)<input type="text" id="howMuch"/></label>
+      <label for="passionCategory">Categorize this passion: 💭 <select name="category" id="passionCategory">
+        <option value="Part of my future" selected="selected">I want it to be part of my future (career) </option>
         <option value="Just love it" selected="selected">I just love it</option>
         <option value="Not sure" selected="selected">I'm not sure</option>
         </select>
@@ -55,7 +66,6 @@
       <input type="submit" value="See my chart!" />
       
       <br>
-      Hello
       
     </form>
 
@@ -88,21 +98,7 @@
         //  {"x": "Passion: " + passionName, "value": (10*100000000), category: "Part of my future"},
           ];
      
-//EXAMPLE          
-      // create a tag (word) cloud chart
-        var chart = anychart.tagCloud(data);
-      // set a chart title
-        chart.title('Example Passion Chart')
-      // set an array of angles at which the words will be laid out
-        chart.angles([0])
-      // enable a color range
-        chart.colorRange(true);
-        // set the color range length
-        chart.colorRange().length('80%');
-      // display the word cloud chart
 
-        chart.container("container");
-        chart.draw();
 
           
 // the following lines grab the input from the form and store it in variables

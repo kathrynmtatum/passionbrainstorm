@@ -27,40 +27,66 @@
     </style>
   </head>
   <h1>
-    Experiences Activity
+    Experiences
   </h1>
   <body>
-    Welcome to the experiences section! Enter an experience you've had, such as a previous internship, job, class - anything notable! Then enter what you liked and disliked about the experince and click "submit experience". When you are all finished entering experiences, click "See Likes/Dislikes" and you will be shown all the things you've liked and disliked about your various experiences so far.
+    
+    <img
+      src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80"
+      class="center"
+      alt="image2"
+    />
+    <br>
+    Welcome to the experiences section! Enter an experience you've had, such as a previous internship, job, class, club - anything notable! Then enter what you liked and disliked about the experince and click "Submit My Experience". When you are all finished entering experiences, click "See Likes/Dislikes" and you will be shown all the things you've liked and disliked about your various experiences so far.
     <br><br>
     
     <form id="form1">
       <label for="name1">Experience title 🦸‍♀️: <input type="text" id="name1"/></label>
       <label for="name2">Likes 👍: <input type="text" id="name2"/></label>
       <label for="name3">Dislikes 👎: <input type="text" id="name3"/></label>
-      <input type="submit" value="Submit" />
+      
+      <input id="button" type="button" value="Submit my experience" />
+      <input type="submit" value="See my Likes/Dislikes!" />
+      
+
     </form>
     <p id="names"></p>
 
     <script>
-      // the following lines grab the input from the form and store it in variables
-      document.getElementById("form1").onsubmit = function() {
+      
+      var likes = [ ];
+      var dislikes = [  ];
+      
+  //Submit my experience
+      document.getElementById("button").onclick = function() {
+  
+      //gets input from the form and stores it in variables      
         name1 = document.getElementById("name1").value;
         name2 = document.getElementById("name2").value;
         name3 = document.getElementById("name3").value;
         
-  
-        //Include each name in an array
-        namelist = [name1, name2, name3];
-
-        //Prints Experience
+      //Prints Experience
         document.getElementById("names").innerHTML += "Experience: " + name1 + "<br />";
         document.getElementById("names").innerHTML += "Liked: " + name2 + "<br />";
         document.getElementById("names").innerHTML += "Disliked: " + name3 + "<br />";
         document.getElementById("names").innerHTML += " <br />";
         
+        likes.push(name2);
+        console.log(likes);
+        dislikes.push(name3);
+        console.log(dislikes);
+        
+        return false; // required to not refresh the page; just leave this here
+        
+      };
+      
+      
+  //See my likes/dislikes
+      document.getElementById("form1").onsubmit = function() {
+        
         //Compiles good and bad experiences
-        document.getElementById("names").innerHTML += "Likes: " + name2 + "<br />";
-        document.getElementById("names").innerHTML += "Dislikes: " + name3 + "<br />";
+        document.getElementById("names").innerHTML += "😍 Likes: " + likes + "<br />";
+        document.getElementById("names").innerHTML += "😕 Dislikes: " + dislikes + "<br />";
         document.getElementById("names").innerHTML += " <br />";
         
 
